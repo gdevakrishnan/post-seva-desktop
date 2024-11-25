@@ -5,6 +5,10 @@ body, h1, h2, h3, p, input, button {
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
   }
+  .logo{
+    height:200px;
+    width:200px;
+  }
   
   /* General container styling */
   .container {

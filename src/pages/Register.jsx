@@ -8,7 +8,8 @@ function Register() {
         {/* Left Side: India Post Branding Section */}
         <div className="branding-section">
           <div className="branding-content">
-            <img src={""} alt="India Post Logo" className="logo" />
+          <img src={logo} alt="India Post Logo" className="logo" />
+
             <h1>भारतीय डाक</h1>
             <h3>डाक सेवा-जन सेवा</h3>
             <h2>India Post</h2>
