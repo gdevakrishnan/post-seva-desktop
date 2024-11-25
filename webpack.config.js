@@ -24,6 +24,17 @@ module.exports = {
                 test: /\.css$/,               // Match .css files
                 use: ['style-loader', 'css-loader'],  // Use both loaders
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,  // Match image file types
+                use: [
+                    {
+                        loader: 'file-loader', // Or use url-loader if you prefer inline images
+                        options: {
+                            name: 'assets/[name].[hash].[ext]', // Output image path
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [
