@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
-import Dashboard from './pages/Dashboard';
+import Register from './pages/Register';
 import './static/index.css';
 
 const App = () => {
     return (
         <Fragment>
-            <Dashboard />
+            <Register />
         </Fragment>
     );
 };
