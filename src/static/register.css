@@ -313,3 +313,16 @@ input[type="password"]:focus {
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
 }
+
+.availability {
+  font-size: 14px;
+  margin: 0px 0px 10px;
+}
+
+.available {
+  color: green;
+}
+
+.not-available {
+  color: #B71C1C;
+}

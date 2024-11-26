@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Routes, Route, Outlet, HashRouter } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
+import appContext from '../context/appContext';
 
 function Router() {
+  const { userDetails } = useContext(appContext);
   return (
     <Fragment>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Register />} />
+          <Route path="/" element={(userDetails) ? <Dashboard /> : <Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
