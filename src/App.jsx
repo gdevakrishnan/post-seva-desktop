@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
-import Register from './pages/Register';
 import './static/index.css';
+import Router from './routers/Router';
 
 const App = () => {
     return (
         <Fragment>
-            <Register />
+            <Router />
         </Fragment>
     );
 };
