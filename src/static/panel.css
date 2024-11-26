@@ -1,0 +1,128 @@
+/* General Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Title Bar Styles */
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #c7c5c5; /* Set background color to white */
+  color: #000000; /* Set text color to black */
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  top: 90px; /* To position below title bar */
+  position: fixed; /* To keep sidebar fixed while scrolling */
+  border-left: 4px solid #000000; /* Add a black border to the left */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-button {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 20px;  /* Increase font size */
+  margin: 25px 0;   /* Increase margin between buttons */
+  display: flex;
+  align-items: center;
+  gap: 20px;        /* Increase gap between icon and text */
+  cursor: pointer;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-button:hover {
+  background-color: #930d03;
+  transform: scale(1.05);
+  color: aliceblue;
+}
+
+/* Team Info */
+.team {
+  margin-top: 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Top Bar Styles */
+.top-bar {
+  background-color: #ab0505;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  top: 0; /* Fix the top bar */
+  width:100vw;
+  padding-left:20px;
+}
+
+.top-bar-logo h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Time and User Info */
+.user-info {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  right: 70px;
+}
+
+/* Service Cards */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px 20px;
+  margin-left: 300px; /* Sidebar width + padding */
+  margin-top: 80px;   /* Ensure there's space below the top bar */
+}
+
+.service-card {
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  border: 5px dotted #000;
+  background-color: #b8b8b8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.icon-container {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.logo{
+  height:100px;
+  width: 100px;
+  margin-left:50px;
+  padding: 10px;
+}

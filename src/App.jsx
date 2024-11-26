@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
-import Register from './pages/Register';
-import './static/index.css';
+import React from 'react';
+import './static/panel.css';  // Global styles for the app
+import Panel from './pages/Panel';
 
-const App = () => {
-    return (
-        <Fragment>
-            <Register />
-        </Fragment>
-    );
-};
+
+function App() {
+  return (
+    <div>
+      <Panel />
+    </div>
+  );
+}
 
 export default App;
