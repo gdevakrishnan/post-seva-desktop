@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import '../static/login.css'; // Using the same CSS for consistent styling
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function SignIn() {
   return (
@@ -14,7 +15,9 @@ function SignIn() {
             <h3>डाक सेवा-जन सेवा</h3>
             <h2>India Post</h2>
             <p>Dak Sewa-Jan Sewa</p>
-            <button className="signin-button">Create an Account</button>
+            <Link to={'/register'}>
+              <button className="signin-button">Create an Account</button>
+            </Link>
           </div>
         </div>
 
@@ -24,10 +27,13 @@ function SignIn() {
             <h2>Sign In to your account</h2>
             <form>
               <label htmlFor="userID">User ID</label>
-              <input type="text" id="userID" placeholder="Enter User ID" />
+              <input type="text" id="userID" placeholder="User ID" />
+
+              <label htmlFor="postalCode">Postal Code</label>
+              <input type="text" id="postalCode" placeholder="Postal Code" />
 
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" placeholder="Enter Password" />
+              <input type="password" id="password" placeholder="Password" />
 
               <div className="form-buttons">
                 <button type="submit" className="signup-button">Sign-in</button>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import '../static/register.css';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 function Register() {
   return (
     <Fragment>
@@ -8,16 +9,18 @@ function Register() {
         {/* Left Side: India Post Branding Section */}
         <div className="branding-section">
           <div className="branding-content">
-          <img src={logo} alt="India Post Logo" className="logo" />
+            <img src={logo} alt="India Post Logo" className="logo" />
 
             <h1>भारतीय डाक</h1>
             <h3>डाक सेवा-जन सेवा</h3>
             <h2>India Post</h2>
             <p>Dak Sewa-Jan Sewa</p>
-            <button className="signin-button">Sign-in</button>
+            <Link to={'/login'}>
+              <button className="signin-button">Sign-in</button>
+            </Link>
           </div>
         </div>
-        
+
         {/* Right Side: Login Form Section */}
         <div className="form-section">
           <div className="form-container">
@@ -25,18 +28,22 @@ function Register() {
             <form>
               <label htmlFor="userID">User ID</label>
               <div className="user-id-container">
-                <input type="text" id="userID" placeholder="Enter User ID" />
-                <button type="button" className="availability-button">Check Availability</button>
+                <div>
+                  <input type="text" id="userID" placeholder="Enter User ID" />
+                </div>
+                <div>
+                  <button type="button" className="availability-button">Check Availability</button>
+                </div>
               </div>
 
               <div className="name-inputs">
                 <div>
-                  <label htmlFor="firstName">First name</label>
-                  <input type="text" id="firstName" placeholder="First name" />
+                  <label htmlFor="fullName">Full name</label>
+                  <input type="text" id="fullName" placeholder="Full name" />
                 </div>
                 <div>
-                  <label htmlFor="lastName">Last name</label>
-                  <input type="text" id="lastName" placeholder="Last name" />
+                  <label htmlFor="postalCode">Postal Code</label>
+                  <input type="text" id="postalCode" placeholder="Postal Code" />
                 </div>
               </div>
 
