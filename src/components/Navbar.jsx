@@ -9,7 +9,7 @@ import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
 const Navbar = () => {
   const { setSidebarIsCollapse } = useContext(appContext);
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -23,7 +23,7 @@ const Navbar = () => {
       </nav>
       <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
         <div className="sidebar-header">
-          <div
+          {/* <div
             className="toggle-btn"
             onClick={toggleSidebar}
             style={{
@@ -31,7 +31,7 @@ const Navbar = () => {
             }}
           >
             {isCollapsed ? <FaCaretRight className="toggle-icon" /> : <FaCaretLeft className="toggle-icon" />}
-          </div>
+          </div> */}
         </div>
         <ul className="nav-links">
           {/* Existing Nav Items */}
