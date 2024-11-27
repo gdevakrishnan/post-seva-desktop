@@ -5,7 +5,7 @@ import { userVerify } from './services/serviceWorker';
 import appContext from './context/appContext';
 
 const App = () => {
-    const [sidebarIsCollapse, setSidebarIsCollapse] = useState(false);
+    const [sidebarIsCollapse, setSidebarIsCollapse] = useState(true);
     const [userDetails, setUserDetails] = useState(null);
 
     useEffect(() => {

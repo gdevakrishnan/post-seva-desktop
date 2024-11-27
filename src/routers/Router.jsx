@@ -7,6 +7,7 @@ import appContext from '../context/appContext';
 import Navbar from '../components/Navbar';
 import Home from '../pages/Home';
 import Complaints from '../pages/Complaints';
+import Chatbot from '../pages/Chatbot';
 
 function Router() {
   const { userDetails } = useContext(appContext);
@@ -16,10 +17,11 @@ function Router() {
         <Navbar />
         <Routes>
           <Route path="/" element={(userDetails) ? <Home /> : <Login />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/complaints" element={<Complaints />} />
+          <Route path="/ai-chat" element={<Chatbot />} />
         </Routes>
         <Outlet />
       </HashRouter>
