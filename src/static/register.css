@@ -326,3 +326,14 @@ input[type="password"]:focus {
 .not-available {
   color: #B71C1C;
 }
+
+.register_page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 99999;
+}

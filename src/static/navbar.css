@@ -1,109 +1,232 @@
-/* General reset for padding and margin */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Styling the header */
-  header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Navbar container */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    height: 60px;
-  }
-  
-  /* Logo */
-  nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  
-  /* Hamburger menu toggle */
-  nav label {
-    display: none;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  /* Navigation items */
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hide menu by default */
-    height: 100vh;
-    width: 70%; /* Adjust width as needed */
-    background-color: #222;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: right 0.3s ease-in-out;
-    padding: 20px;
-  }
-  
-  /* Show menu when right is 0 */
-  nav ul[style*="right: 0px"] {
-    right: 0;
-  }
-  
-  /* Navigation items */
-  nav ul li {
-    margin: 15px 0;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    transition: color 0.2s;
-  }
-  
-  nav ul li a:hover {
-    color: #f0a500;
-  }
-  
-  /* For desktop: Sidebar is a normal nav bar */
-  @media (min-width: 768px) {
-    nav {
-      justify-content: space-between;
-    }
-  
-    nav ul {
-      position: relative;
-      top: auto;
-      right: auto;
-      height: auto;
-      width: auto;
-      background-color: transparent;
-      flex-direction: row;
-      justify-content: flex-end;
-      padding: 0;
-    }
-  
-    nav ul li {
-      margin: 0;
-    }
-  
-    nav label {
-      display: none; /* Hide hamburger for desktop */
-    }
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(45deg, #E3E4E4, #CFCFCF);
+  position: fixed;
+  transition: width 0.5s ease, background 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  top: 40px;
+}
+
+.sidebar-header {
+  padding: 0 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  height: 0px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.brand i {
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+  position: relative;
+}
+
+.nav-icon{
+  font-size: 20px;
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background: #5E1313;
+}
+
+.nav-item:hover i {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  50% { transform: translateX(1px); }
+  75% { transform: translateX(-1px); }
+} */
+
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #5E1313;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: #5E1313;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Show dropdown menu when active */
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+
+/* Sidebar collapse styles */
+.sidebar.collapsed {
+  width: 80px;
+  background: linear-gradient(45deg, #E3E4E4, #CFCFCF);
+}
+
+.sidebar.collapsed .nav-item span,
+.sidebar.collapsed .sidebar-header h3 span,
+.sidebar.collapsed .nav-item .dropdown-icon,
+.sidebar.collapsed .dropdown-menu{
+  display: none; 
+}
+
+.sidebar.collapsed .nav-item .nav-icon {
+  display: block;
+}
+
+.sidebar.collapsed .sidebar-header h3 {
+  justify-content: center;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 40px;
+  width: calc(100% - 250px);
+  transition: margin-left 0.5s ease;
+  background: #f3f4f6;
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+.toggle-btn {
+  width: 35px;
+  height: 35px;
+  background: #5E1313;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 45vh;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+
+.toggle-btn .toggle-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Smooth Hover Animation */
+.nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: #5E1313;
+  transition: transform 0.2s ease;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.nav-item:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+nav {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #5E1313;
+  z-index: 999;
+}
+
+nav .brand {
+  color: #f3f4f6;
+}
+
+li {
+  margin: 0px 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ul li a span {
+  color: #2e2e2e;
+}
+
+ul li:hover a span {
+  color: #f3f4f6;
+}

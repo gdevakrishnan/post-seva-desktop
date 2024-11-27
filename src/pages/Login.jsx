@@ -46,7 +46,7 @@ function SignIn() {
 
   return (
     <Fragment>
-      <div className="container">
+      <div className="container login_page">
         {/* Left Side: India Post Branding Section */}
         <div className="branding-section">
           <div className="branding-content">
