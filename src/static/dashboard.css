@@ -8,6 +8,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 16px;
+    margin-top: 30px;
 }
 
 .card {
@@ -44,6 +45,6 @@
 .card-icon {
     font-size: 24px;
     vertical-align: middle;
-    color: #5E1313;
+    color: #B71C1C;
     margin-bottom: 16px;
 }

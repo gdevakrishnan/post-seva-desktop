@@ -121,9 +121,9 @@ function Dashboard() {
           float: "right",
         }}
       >
-        <div className="dashboard-header">
+        {/* <div className="dashboard-header">
           <p>Post Office Code: 641042</p>
-        </div>
+        </div> */}
 
         {/* KPI Cards */}
         <div className="kpi-cards">

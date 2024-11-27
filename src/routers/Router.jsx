@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import Home from '../pages/Home';
 import Complaints from '../pages/Complaints';
 import Chatbot from '../pages/Chatbot';
+import Mail from '../pages/Mail';
 
 function Router() {
   const { userDetails } = useContext(appContext);
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/login" element={<Login />} />
           <Route path="/complaints" element={<Complaints />} />
           <Route path="/ai-chat" element={<Chatbot />} />
+          <Route path="/mail" element={<Mail />} />
         </Routes>
         <Outlet />
       </HashRouter>

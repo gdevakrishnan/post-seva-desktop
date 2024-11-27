@@ -26,6 +26,8 @@
 }
 
 .brand {
+  font-size: 1.6rem;
+  font-weight: 400;
   display: flex;
   align-items: center;
   color: #fff;
@@ -66,7 +68,7 @@
 }
 
 .nav-item:hover {
-  background: #5E1313;
+  background: #B71C1C;
 }
 
 .nav-item:hover i {
@@ -129,7 +131,7 @@
 .toggle-btn {
   width: 35px;
   height: 35px;
-  background: #5E1313;
+  background: #B71C1C;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -154,7 +156,7 @@
   top: 0;
   width: 5px;
   height: 100%;
-  background: #5E1313;
+  background: #B71C1C;
   transition: transform 0.2s ease;
   transform: scaleY(0);
   transform-origin: bottom;
@@ -176,7 +178,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #5E1313;
+  background-color: #B71C1C;
 }
 
 nav .brand {
@@ -198,8 +200,38 @@ ul li:hover a span {
 }
 
 nav {
+  width: 100vw;
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 2rem;
+}
+
+nav .image img {
+  width: auto;
+  height: 50px;
+}
+
+nav button {
+  background-color: transparent;
+  padding: 20px;
+  border: none;
+  outline: none;
+  color: #f3f4f6;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+nav .group {
+  display: flex;
+  gap: 20px;
+}
+
+nav .group .user_details p {
+  color: #f3f4f6;
+  line-height: 60px;
+  font-size: 1rem;
 }
