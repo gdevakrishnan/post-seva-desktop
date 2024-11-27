@@ -235,3 +235,7 @@ nav .group .user_details p {
   line-height: 60px;
   font-size: 1rem;
 }
+
+nav button:hover {
+  background-color: transparent;
+}
