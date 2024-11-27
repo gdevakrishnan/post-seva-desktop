@@ -5,6 +5,8 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import appContext from '../context/appContext';
 import Navbar from '../components/Navbar';
+import Home from '../pages/Home';
+import Complaints from '../pages/Complaints';
 
 function Router() {
   const { userDetails } = useContext(appContext);
@@ -13,9 +15,11 @@ function Router() {
       <HashRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={(userDetails) ? <Dashboard /> : <Login />} />
+          <Route path="/" element={(userDetails) ? <Home /> : <Login />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/complaints" element={<Complaints />} />
         </Routes>
         <Outlet />
       </HashRouter>
