@@ -6,13 +6,14 @@
 
 /* Sidebar Styling */
 .sidebar {
-  width: 250px;
+  width: 80px; /* Start with collapsed width */
   height: 100%;
   background: linear-gradient(45deg, #E3E4E4, #CFCFCF);
   position: fixed;
   transition: width 0.5s ease, background 0.3s ease;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  top: 40px;
+  top: 60px;
+  overflow: hidden; /* Prevent overflow of content when collapsed */
 }
 
 .sidebar-header {
@@ -25,6 +26,8 @@
 }
 
 .brand {
+  font-size: 1.6rem;
+  font-weight: 400;
   display: flex;
   align-items: center;
   color: #fff;
@@ -48,12 +51,12 @@
   text-decoration: none;
   transition: background 0.3s ease, padding-left 0.3s ease;
   position: relative;
+  color: black;
 }
 
-.nav-icon{
+.nav-icon {
   font-size: 20px;
   width: 35px;
-  min-width: 35px;
   height: 35px;
   line-height: 35px;
   text-align: center;
@@ -61,10 +64,11 @@
   margin-right: 10px;
   border-radius: 2px;
   transition: all 0.3s ease;
+  color: black;
 }
 
 .nav-item:hover {
-  background: #5E1313;
+  background: #B71C1C;
 }
 
 .nav-item:hover i {
@@ -76,52 +80,20 @@
   25% { transform: translateX(-1px); }
   50% { transform: translateX(1px); }
   75% { transform: translateX(-1px); }
-} */
-
-/* Dropdown Menu Styling */
-.dropdown {
-  position: relative;
 }
 
-.dropdown-menu {
-  display: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  background: #5E1313;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
+/* Sidebar hover to expand */
+.sidebar:hover {
+  width: 250px; /* Expand to full width when hovered */
+}
+
+.sidebar .nav-item span:not(.nav-icon) {
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.dropdown-menu .dropdown-item {
-  display: block;
-  padding: 10px 20px;
-  color: #fff;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.dropdown-menu .dropdown-item:hover {
-  background: #5E1313;
-}
-
-.dropdown-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.dropdown-icon {
-  font-size: 14px;
-  transition: transform 0.3s ease;
-}
-
-/* Show dropdown menu when active */
-.dropdown.active .dropdown-menu {
-  display: block;
+.sidebar:hover .nav-item span:not(.nav-icon) {
+  opacity: 1; /* Show text when sidebar is expanded */
 }
 
 /* Sidebar collapse styles */
@@ -130,15 +102,13 @@
   background: linear-gradient(45deg, #E3E4E4, #CFCFCF);
 }
 
-.sidebar.collapsed .nav-item span,
-.sidebar.collapsed .sidebar-header h3 span,
-.sidebar.collapsed .nav-item .dropdown-icon,
-.sidebar.collapsed .dropdown-menu{
-  display: none; 
+.sidebar.collapsed .nav-item span {
+  display: none;
 }
 
 .sidebar.collapsed .nav-item .nav-icon {
   display: block;
+  color: black; /* Change icon color to black when collapsed */
 }
 
 .sidebar.collapsed .sidebar-header h3 {
@@ -161,7 +131,7 @@
 .toggle-btn {
   width: 35px;
   height: 35px;
-  background: #5E1313;
+  background: #B71C1C;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -171,9 +141,7 @@
   position: absolute;
   top: 45vh;
   border-radius: 50%;
-  z-index: 999;
 }
-
 
 .toggle-btn .toggle-icon {
   font-size: 18px;
@@ -188,7 +156,7 @@
   top: 0;
   width: 5px;
   height: 100%;
-  background: #5E1313;
+  background: #B71C1C;
   transition: transform 0.2s ease;
   transform: scaleY(0);
   transform-origin: bottom;
@@ -199,6 +167,7 @@
   transform-origin: top;
 }
 
+/* Navbar Styling */
 nav {
   width: 100vw;
   height: 60px;
@@ -209,8 +178,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #5E1313;
-  z-index: 999;
+  background-color: #B71C1C;
 }
 
 nav .brand {
@@ -229,4 +197,45 @@ ul li a span {
 
 ul li:hover a span {
   color: #f3f4f6;
+}
+
+nav {
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 2rem;
+}
+
+nav .image img {
+  width: auto;
+  height: 50px;
+}
+
+nav button {
+  background-color: transparent;
+  padding: 20px;
+  border: none;
+  outline: none;
+  color: #f3f4f6;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+nav .group {
+  display: flex;
+  gap: 20px;
+}
+
+nav .group .user_details p {
+  color: #f3f4f6;
+  line-height: 60px;
+  font-size: 1rem;
+}
+
+nav button:hover {
+  background-color: transparent;
 }
