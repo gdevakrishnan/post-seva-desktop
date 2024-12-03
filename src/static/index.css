@@ -17,7 +17,7 @@ body {
 
 .page {
     float: right;
-    width: calc(100vw - 80px);
+    width: calc(100vw - 250px);
     position: relative;
     top: 60px;
     left: 80px;
